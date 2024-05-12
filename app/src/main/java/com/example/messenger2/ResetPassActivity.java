@@ -36,7 +36,7 @@ public class ResetPassActivity extends AppCompatActivity {
     }
 
     public static Intent newIntent(Context context, String email) {
-        Intent intent = new Intent(context, RegisterActivity.class);
+        Intent intent = new Intent(context, ResetPassActivity.class);
         intent.putExtra(EXTRA_EMAIL, email);
         return intent;
     }
