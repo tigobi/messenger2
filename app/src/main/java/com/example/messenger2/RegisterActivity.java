@@ -37,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if (password.equals(password2)) {
 
                 } else {
-                    Toast.makeText(RegisterActivity.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "Passwords do not  match", Toast.LENGTH_SHORT).show();
                 }
             }
         });
