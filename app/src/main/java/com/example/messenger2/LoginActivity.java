@@ -1,5 +1,6 @@
 package com.example.messenger2;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -82,5 +83,9 @@ public class LoginActivity extends AppCompatActivity {
         buttonLogin = findViewById(R.id.buttonLogin);
         textViewForgotPassword = findViewById(R.id.textViewForgotPassword);
         textViewRegister = findViewById(R.id.textViewRegister);
+    }
+
+    public static Intent newIntent(Context context) {
+        return new Intent(context, LoginActivity.class);
     }
 }
