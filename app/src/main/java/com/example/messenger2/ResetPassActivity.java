@@ -61,5 +61,7 @@ public class ResetPassActivity extends AppCompatActivity {
         Intent intent = new Intent(context, ResetPassActivity.class);
         intent.putExtra(EXTRA_EMAIL, email);
         return intent;
+
+
     }
 }
