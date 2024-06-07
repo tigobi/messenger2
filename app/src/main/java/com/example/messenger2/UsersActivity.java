@@ -13,28 +13,26 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseUser;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class UsersActivity extends AppCompatActivity {
     private UserViewModel viewModel;
     private RecyclerView recyclerViewUsers;
     private UsersAdapter usersAdapter;
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference databaseReference = firebaseDatabase.getReference("Messages");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_users);
+        for (int i = 0; i < 10; i++) {
+            databaseReference.push().setValue("Hello world" + i);
+        }
+        initViews();
         viewModel = new ViewModelProvider(this).get(UserViewModel.class);
         observeViewModel();
-        List<User> users = new ArrayList<>();
-        for (int i = 0; i < 30; i++) {
-            User user = new User("id" + i, "name" + i, "lastName" + i, i, new Random().nextBoolean());
-            users.add(user);
-        }
-        usersAdapter.setUsers(users);
     }
 
     public static Intent newIntent(Context context) {
