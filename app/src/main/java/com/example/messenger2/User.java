@@ -19,6 +19,20 @@ public class User {
         return id;
     }
 
+    public User() {
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", isOnline=" + isOnline +
+                '}';
+    }
+
     public String getName() {
         return name;
     }
