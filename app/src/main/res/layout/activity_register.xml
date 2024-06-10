@@ -40,14 +40,6 @@
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/editTextPassword2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:hint="@string/repeat_password"
-            android:inputType="textPassword" />
-
-        <EditText
             android:id="@+id/editTextName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -17,7 +17,6 @@ import com.google.firebase.auth.FirebaseUser;
 public class RegisterActivity extends AppCompatActivity {
     private EditText editTextEmail;
     private EditText editTextPassword;
-    private EditText editTextPassword2;
     private EditText editTextName;
     private EditText editTextLastname;
     private EditText editTextAge;
@@ -37,15 +36,10 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String email = getTrimmedValue(editTextEmail);
                 String password = getTrimmedValue(editTextPassword);
-                String password2 = getTrimmedValue(editTextPassword2);
                 String name = getTrimmedValue(editTextName);
                 String lastName = getTrimmedValue(editTextLastname);
                 int age = Integer.parseInt(getTrimmedValue(editTextAge));
-                if (password.equals(password2)) {
                     viewModel.signUp(email, password, name, lastName, age);
-                } else {
-                    Toast.makeText(RegisterActivity.this, "Passwords do not  match", Toast.LENGTH_SHORT).show();
-                }
             }
         });
     }
@@ -74,7 +68,6 @@ public class RegisterActivity extends AppCompatActivity {
     private void initViews() {
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
-        editTextPassword2 = findViewById(R.id.editTextPassword2);
         editTextName = findViewById(R.id.editTextName);
         editTextLastname = findViewById(R.id.editTextLastname);
         editTextAge = findViewById(R.id.editTextAge);
