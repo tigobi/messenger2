@@ -64,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
         viewModel.getUser().observe(this, new Observer<FirebaseUser>() {
             @Override
             public void onChanged(FirebaseUser firebaseUser) {
-                Intent intent = UsersActivity.newIntent(LoginActivity.this);
+                Intent intent = UsersActivity.newIntent(LoginActivity.this, firebaseUser.getUid());
                 startActivity(intent);
                 finish();
             }
