@@ -77,6 +77,18 @@ public class UsersActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        viewModel.setUserOnline(true);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        viewModel.setUserOnline(false);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.item_logout) {
             viewModel.logout();
